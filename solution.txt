@@ -1,0 +1,53 @@
+
+Task 1: Create Compute Engine instance
+
+To create a Compute Engine instance on Google Cloud Platform with the specified requirements, follow these steps:
+
+Go to the Google Cloud Platform Console (https://console.cloud.google.com).
+Create a new project or select an existing project.
+In the navigation menu, click on "Compute Engine" under the "Compute" section.
+Click on the "Create" button to create a new instance.
+Configure the instance with the following settings:
+Name: Enter a name for your instance.
+Region: Select the region closest to your location.
+Zone: Select a zone within the chosen region.
+Machine type: Choose the machine type that suits your needs and is the least expensive (e.g., "e2-micro").
+Boot disk: Choose a Linux distribution (e.g., Ubuntu) as the boot disk.
+Firewall: Allow HTTP and HTTPS traffic if needed.
+SSH keys: Optionally, add your public SSH key to enable SSH access.
+Click on the "Management, security, disks, networking, sole tenancy" link to expand more options.
+Under "Management," enable "Shutdown script" and enter the following command to install PIP during instance startup:
+sql
+Copy code
+sudo apt-get update && sudo apt-get install -y python3-pip
+Leave other options with their default values or modify them as per your requirements.
+Click on the "Create" button to create the instance.
+Task 2: SSH to your instance
+
+To SSH into your instance directly from the Google Cloud Platform Console, follow these steps:
+
+Go to the Google Cloud Platform Console (https://console.cloud.google.com).
+Navigate to "Compute Engine" under the "Compute" section.
+Locate your created instance and click on the SSH button next to it.
+A new SSH session will open in a browser window, connecting you to your instance.
+Task 3: Check Python version
+
+Assuming you are now connected to your instance via SSH, you can check the Python version using the following command:
+
+css
+Copy code
+python3 --version
+This command will display the installed Python version on your instance.
+
+Task 4: Remove your Compute Engine instance
+
+To remove your Compute Engine instance, follow these steps:
+
+Go to the Google Cloud Platform Console (https://console.cloud.google.com).
+Navigate to "Compute Engine" under the "Compute" section.
+Locate the instance you want to remove.
+Click on the checkbox next to the instance name to select it.
+Click on the "Delete" button at the top of the page.
+In the confirmation dialog, click on the "Delete" button again to confirm the deletion.
+The instance will be deleted, and any associated resources will be released.
+Note: Be cautious while deleting instances as it will permanently remove the instance and its data.
